@@ -143,7 +143,7 @@ export async function fetchStorageBuckets(
     logger,
   } = context;
 
-  const client = new CloudStorageClient({ config }, logger);
+  //const client = new CloudStorageClient({ config }, logger);
   const orgPolicyClient = new OrgPolicyClient({ config }, logger);
 
   let publicAccessPreventionPolicy: boolean | undefined = undefined;
@@ -172,41 +172,41 @@ export async function fetchStorageBuckets(
   }
 
   const bucketIdsWithUnprocessedPolicies: string[] = [];
-    fakeData.forEach(async(bucket, index)=>{
-      const bucketId = bucket.id as string;
+  fakeData.forEach(async (bucket, index) => {
+    const bucketId = bucket.id as string;
 
-      let bucketPolicy: storage_v1.Schema$Policy | undefined;
-      try {
-        bucketPolicy = fakePolicy[index]
-        console.log('policy', bucketPolicy)
-      } catch (err) {
-        if (
-          err.message ===
-          'Bucket is requester pays bucket but no user project provided.'
-        ) {
-          bucketIdsWithUnprocessedPolicies.push(bucketId);
-        } else {
-          throw err;
-        }
+    let bucketPolicy: storage_v1.Schema$Policy | undefined;
+    try {
+      bucketPolicy = fakePolicy[index]
+      console.log('policy', bucketPolicy)
+    } catch (err) {
+      if (
+        err.message ===
+        'Bucket is requester pays bucket but no user project provided.'
+      ) {
+        bucketIdsWithUnprocessedPolicies.push(bucketId);
+      } else {
+        throw err;
       }
+    }
 
-      const { access, isPublicBucket } = getPublicState({
-        bucketPolicy,
-        publicAccessPreventionPolicy,
-        iamConfiguration: bucket.iamConfiguration,
-      });
-  
-      const bucketEntity = createCloudStorageBucketEntity({
-        data: bucket,
-        projectId: config.serviceAccountKeyConfig.project_id,
-        isPublicBucket,
-        access,
-      });
-  
-      console.log('result', bucketEntity)
-  
-      await jobState.addEntity(bucketEntity);
+    const { access, isPublicBucket } = getPublicState({
+      bucketPolicy,
+      publicAccessPreventionPolicy,
+      iamConfiguration: bucket.iamConfiguration,
     });
+
+    const bucketEntity = createCloudStorageBucketEntity({
+      data: bucket,
+      projectId: config.serviceAccountKeyConfig.project_id,
+      isPublicBucket,
+      access,
+    });
+
+    console.log('result', bucketEntity)
+
+    await jobState.addEntity(bucketEntity);
+  });
 
   // NOTE: Being unable to process "requestor pays" buckets is a non-fatal error,
   // and should _not_ cause dependent steps from running.
