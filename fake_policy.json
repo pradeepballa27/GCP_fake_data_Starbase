@@ -1,0 +1,94 @@
+[
+    {
+        "kind": "storage#policy1",
+        "resourceId": "projects/_/buckets/foundri-state-securiti1",
+        "version": 1,
+        "etag": "CDY=",
+        "bindings": [
+          {
+            "role": "roles/storage.admin",
+            "members": [
+              "allAuthenticatedUsers"
+            ]
+          },
+          {
+            "role": "roles/storage.legacyBucketOwner",
+            "members": [
+              "projectEditor:edss-draft",
+              "projectOwner:edss-draft"
+            ]
+          },
+          {
+            "role": "roles/storage.legacyBucketReader",
+            "members": [
+              "projectViewer:edss-draft"
+            ]
+          },
+          {
+            "role": "roles/storage.legacyObjectOwner",
+            "members": [
+              "projectEditor:edss-draft",
+              "projectOwner:edss-draft"
+            ]
+          },
+          {
+            "role": "roles/storage.legacyObjectReader",
+            "members": [
+              "projectViewer:edss-draft"
+            ]
+          },
+          {
+            "role": "roles/storage.objectViewer",
+            "members": [
+              "allUsers"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "storage#policy2",
+        "resourceId": "projects/_/buckets/foundri-state-securiti2",
+        "version": 1,
+        "etag": "CDY=",
+        "bindings": [
+          {
+            "role": "roles/storage.admin",
+            "members": [
+              "allAuthenticatedUsers"
+            ]
+          },
+          {
+            "role": "roles/storage.legacyBucketOwner",
+            "members": [
+              "projectEditor:edss-draft",
+              "projectOwner:edss-draft"
+            ]
+          },
+          {
+            "role": "roles/storage.legacyBucketReader",
+            "members": [
+              "projectViewer:edss-draft"
+            ]
+          },
+          {
+            "role": "roles/storage.legacyObjectOwner",
+            "members": [
+              "projectEditor:edss-draft",
+              "projectOwner:edss-draft"
+            ]
+          },
+          {
+            "role": "roles/storage.legacyObjectReader",
+            "members": [
+              "projectViewer:edss-draft"
+            ]
+          },
+          {
+            "role": "roles/storage.objectViewer",
+            "members": [
+              "allUsers"
+            ]
+          }
+        ]
+      }
+]

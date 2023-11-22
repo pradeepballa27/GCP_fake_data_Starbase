@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#createBillingBudgetEntity should convert to entity 1`] = `
+{
+  "_class": [
+    "Ruleset",
+  ],
+  "_key": "sample-name",
+  "_rawData": [
+    {
+      "name": "default",
+      "rawData": {
+        "amount": {
+          "specifiedAmount": {
+            "currencyCode": "USD",
+            "nanos": 750000000,
+            "units": "1",
+          },
+        },
+        "budgetFilter": {
+          "projects": [
+            "project/project-1",
+            "project/project-2",
+          ],
+        },
+        "displayName": "sample-display-name",
+        "etag": "sample-etag",
+        "name": "sample-name",
+        "notificationsRule": {
+          "disableDefaultIamRecipients": true,
+          "monitoringNotificationChannels": [
+            "channel-1",
+            "channel-2",
+          ],
+          "pubsubTopic": "sample-pubsub-topic",
+          "schemaVersion": "sample-schema-version",
+        },
+      },
+    },
+  ],
+  "_type": "google_billing_budget",
+  "billingAccount": "sample-account",
+  "createdOn": undefined,
+  "disableDefaultIamRecipients": true,
+  "displayName": "sample-display-name",
+  "etag": "sample-etag",
+  "monitoringNotificationChannels": [
+    "channel-1",
+    "channel-2",
+  ],
+  "name": "sample-name",
+  "projects": [
+    "project/project-1",
+    "project/project-2",
+  ],
+  "pubsubTopic": "sample-pubsub-topic",
+  "schemaVersion": "sample-schema-version",
+  "specifiedAmoutCurrencyCode": "USD",
+  "specifiedAmoutNanos": 750000000,
+  "specifiedAmoutUnits": "1",
+}
+`;

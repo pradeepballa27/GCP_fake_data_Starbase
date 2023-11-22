@@ -1,0 +1,254 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#createDNSManagedZoneEntity should convert to entity 1`] = `
+{
+  "_class": [
+    "DomainZone",
+  ],
+  "_key": "778386319953398157",
+  "_rawData": [
+    {
+      "name": "default",
+      "rawData": {
+        "creationTime": "2021-01-22T16:48:27.272Z",
+        "description": "",
+        "dnsName": "example.com.",
+        "id": "778386319953398157",
+        "kind": "dns#managedZone",
+        "name": "example-zone",
+        "nameServers": [
+          "ns-cloud-a1.googledomains.com.",
+          "ns-cloud-a2.googledomains.com.",
+          "ns-cloud-a3.googledomains.com.",
+          "ns-cloud-a4.googledomains.com.",
+        ],
+        "visibility": "public",
+      },
+    },
+  ],
+  "_type": "google_dns_managed_zone",
+  "cloudLoggingStatus": "disabled",
+  "createdOn": 1611334107272,
+  "description": "",
+  "displayName": "example-zone",
+  "dnssec": undefined,
+  "domainName": "example.com.",
+  "id": "778386319953398157",
+  "keySigningAlgorithm": undefined,
+  "kind": "dns#managedZone",
+  "name": "example-zone",
+  "visibility": "public",
+  "zoneSigningAlgorithm": undefined,
+}
+`;
+
+exports[`#createDNSManagedZoneEntity should set dnssec to "on" when dnssec is enabled 1`] = `
+{
+  "_class": [
+    "DomainZone",
+  ],
+  "_key": "778386319953398157",
+  "_rawData": [
+    {
+      "name": "default",
+      "rawData": {
+        "cloudLoggingConfig": {
+          "enableLogging": true,
+        },
+        "creationTime": "2021-01-22T16:48:27.272Z",
+        "description": "",
+        "dnsName": "example.com.",
+        "dnssecConfig": {
+          "kind": "dns#managedZoneDnsSecConfig",
+          "nonExistence": "nsec3",
+          "state": "on",
+        },
+        "id": "778386319953398157",
+        "kind": "dns#managedZone",
+        "name": "example-zone",
+        "nameServers": [
+          "ns-cloud-a1.googledomains.com.",
+          "ns-cloud-a2.googledomains.com.",
+          "ns-cloud-a3.googledomains.com.",
+          "ns-cloud-a4.googledomains.com.",
+        ],
+        "visibility": "public",
+      },
+    },
+  ],
+  "_type": "google_dns_managed_zone",
+  "cloudLoggingStatus": "enabled",
+  "createdOn": 1611334107272,
+  "description": "",
+  "displayName": "example-zone",
+  "dnssec": "on",
+  "domainName": "example.com.",
+  "id": "778386319953398157",
+  "keySigningAlgorithm": undefined,
+  "kind": "dns#managedZone",
+  "name": "example-zone",
+  "visibility": "public",
+  "zoneSigningAlgorithm": undefined,
+}
+`;
+
+exports[`#createDNSManagedZoneEntity should set value to keySigningAlgorithm when it is present 1`] = `
+{
+  "_class": [
+    "DomainZone",
+  ],
+  "_key": "778386319953398157",
+  "_rawData": [
+    {
+      "name": "default",
+      "rawData": {
+        "cloudLoggingConfig": {
+          "enableLogging": null,
+        },
+        "creationTime": "2021-01-22T16:48:27.272Z",
+        "description": "",
+        "dnsName": "example.com.",
+        "dnssecConfig": {
+          "defaultKeySpecs": [
+            {
+              "algorithm": "rsasha256",
+              "keyLength": 2048,
+              "keyType": "keySigning",
+              "kind": "dns#dnsKeySpec",
+            },
+          ],
+          "kind": "dns#managedZoneDnsSecConfig",
+          "nonExistence": "nsec3",
+          "state": "on",
+        },
+        "id": "778386319953398157",
+        "kind": "dns#managedZone",
+        "name": "example-zone",
+        "nameServers": [
+          "ns-cloud-a1.googledomains.com.",
+          "ns-cloud-a2.googledomains.com.",
+          "ns-cloud-a3.googledomains.com.",
+          "ns-cloud-a4.googledomains.com.",
+        ],
+        "visibility": "public",
+      },
+    },
+  ],
+  "_type": "google_dns_managed_zone",
+  "cloudLoggingStatus": "disabled",
+  "createdOn": 1611334107272,
+  "description": "",
+  "displayName": "example-zone",
+  "dnssec": "on",
+  "domainName": "example.com.",
+  "id": "778386319953398157",
+  "keySigningAlgorithm": "rsasha256",
+  "kind": "dns#managedZone",
+  "name": "example-zone",
+  "visibility": "public",
+  "zoneSigningAlgorithm": undefined,
+}
+`;
+
+exports[`#createDNSManagedZoneEntity should set value to zoneSigningAlgorithm when it is present 1`] = `
+{
+  "_class": [
+    "DomainZone",
+  ],
+  "_key": "778386319953398157",
+  "_rawData": [
+    {
+      "name": "default",
+      "rawData": {
+        "cloudLoggingConfig": {
+          "enableLogging": false,
+        },
+        "creationTime": "2021-01-22T16:48:27.272Z",
+        "description": "",
+        "dnsName": "example.com.",
+        "dnssecConfig": {
+          "defaultKeySpecs": [
+            {
+              "algorithm": "rsasha256",
+              "keyLength": 1024,
+              "keyType": "zoneSigning",
+              "kind": "dns#dnsKeySpec",
+            },
+          ],
+          "kind": "dns#managedZoneDnsSecConfig",
+          "nonExistence": "nsec3",
+          "state": "on",
+        },
+        "id": "778386319953398157",
+        "kind": "dns#managedZone",
+        "name": "example-zone",
+        "nameServers": [
+          "ns-cloud-a1.googledomains.com.",
+          "ns-cloud-a2.googledomains.com.",
+          "ns-cloud-a3.googledomains.com.",
+          "ns-cloud-a4.googledomains.com.",
+        ],
+        "visibility": "public",
+      },
+    },
+  ],
+  "_type": "google_dns_managed_zone",
+  "cloudLoggingStatus": "disabled",
+  "createdOn": 1611334107272,
+  "description": "",
+  "displayName": "example-zone",
+  "dnssec": "on",
+  "domainName": "example.com.",
+  "id": "778386319953398157",
+  "keySigningAlgorithm": undefined,
+  "kind": "dns#managedZone",
+  "name": "example-zone",
+  "visibility": "public",
+  "zoneSigningAlgorithm": "rsasha256",
+}
+`;
+
+exports[`#createDNSPolicyEntity should convert to entity 1`] = `
+{
+  "_class": [
+    "Ruleset",
+  ],
+  "_key": "projects/j1-gc-integration-dev-v2/policies/2869664235641544935",
+  "_rawData": [
+    {
+      "name": "default",
+      "rawData": {
+        "description": "",
+        "enableInboundForwarding": true,
+        "enableLogging": true,
+        "id": "2869664235641544935",
+        "kind": "dns#policy",
+        "name": "test-policy",
+        "networks": [
+          {
+            "kind": "dns#policyNetwork",
+            "networkUrl": "https://www.googleapis.com/compute/v1/projects/j1-gc-integration-dev-v3/global/networks/public-compute-app-vpc",
+          },
+          {
+            "kind": "dns#policyNetwork",
+            "networkUrl": "https://www.googleapis.com/compute/v1/projects/j1-gc-integration-dev-v3/global/networks/default",
+          },
+        ],
+      },
+    },
+  ],
+  "_type": "google_dns_policy",
+  "createdOn": undefined,
+  "description": "",
+  "displayName": "test-policy",
+  "enableInboundForwarding": true,
+  "enableLogging": true,
+  "id": "2869664235641544935",
+  "kind": "dns#policy",
+  "name": "test-policy",
+  "networks": [
+    "https://www.googleapis.com/compute/v1/projects/j1-gc-integration-dev-v3/global/networks/public-compute-app-vpc",
+    "https://www.googleapis.com/compute/v1/projects/j1-gc-integration-dev-v3/global/networks/default",
+  ],
+}
+`;
