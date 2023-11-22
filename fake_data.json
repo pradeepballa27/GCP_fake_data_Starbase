@@ -2,7 +2,7 @@
   {
     "kind": "storage#bucket1",
     "selfLink": "https://www.googleapis.com/storage/v1/b/securiti-fl-metrics-8527f3f7890000",
-    "id": "securiti-fake-bucket-data-1",
+    "id": "securiti-fl-metrics-8527f8f79890pbpb",
     "name": "securiti-fl-metrics-8527f8f7",
     "projectNumber": "39405957570793039203",
     "metageneration": "11",
@@ -48,7 +48,7 @@
   {
     "kind": "storage#bucketst2",
     "selfLink": "https://www.googleapis.com/storage/v1/b/securiti-fl-metrics-8527f3f7111111",
-    "id": "securiti-fake-bucket-data-2",
+    "id": "securiti-fl-metrics-8527f8f7989090907bpbp",
     "name": "securiti-fl-metrics-8527f8f78218w912",
     "projectNumber": "39405957570793039203",
     "metageneration": "11",
